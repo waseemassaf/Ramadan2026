@@ -1,0 +1,381 @@
+/* ===================================================== */
+/* ================= IMPORTERA TYPSNITT ================= */
+/* ===================================================== */
+
+/* Hämtar Google Fonts (om du vill använda dem senare) */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Open+Sans:wght@300;600&display=swap');
+
+
+/* ===================================================== */
+/* ====================== RESET ======================== */
+/* ===================================================== */
+
+/* Tar bort webbläsarens standard-marginal och padding */
+* {
+    margin: 0;              /* Tar bort ytteravstånd */
+    padding: 0;             /* Tar bort inneravstånd */
+    box-sizing: border-box; /* Gör så padding räknas in i bredd */
+}
+
+
+/* ===================================================== */
+/* ======================= BODY ======================== */
+/* ===================================================== */
+
+body {
+    font-family: Arial, sans-serif;   /* Typsnitt */
+    line-height: 1.6;                 /* Avstånd mellan rader */
+
+    /* Bakgrundsfärg om bilden inte laddas */
+    background-color: #f4f4f4;
+
+    /* Bakgrundsbild */
+    background-image: url('bkbild.png');
+
+    background-repeat: no-repeat;     /* Upprepas inte */
+    background-attachment: fixed;     /* Rör sig inte vid scroll */
+    background-position: center top;  /* Centrerad upptill */
+    background-size: cover;           /* Täcker hela skärmen */
+}
+
+
+/* ===================================================== */
+/* =================== HUVUDCONTAINER ================== */
+/* ===================================================== */
+
+.main {
+    width: 92%;              /* Tar 92% av skärmen */
+    max-width: 850px;        /* Lite bredare än innan men inte för stor */
+    margin: 40px auto;       /* Centrerar horisontellt */
+    background: white;       /* Vit bakgrund */
+    padding: 30px;           /* Luft inuti */
+    border-radius: 12px;     /* Rundade hörn */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Liten mjuk skugga */
+}
+
+
+/* ===================================================== */
+/* ==================== NAVIGATION ===================== */
+/* ===================================================== */
+
+
+
+.välkomnestext {
+    text-align: center;
+}
+
+
+.nav {
+    display: flex;                /* Gör innehållet flexibelt */
+    justify-content: space-between; /* Ena vänster, andra höger */
+    align-items: center;          /* Vertikalt centrerad */
+    background-color: #2e7d32;    /* Mörk grön Ramadan-färg */
+    padding: 12px 18px;           /* Luft inuti */
+    border-radius: 8px;           /* Rundade hörn */
+    margin-bottom: 40px;          /* Avstånd nedåt */
+}
+
+
+/* Vanliga nav-länkar */
+.nav a {
+    color: white;             /* Vit text */
+    text-decoration: none;    /* Tar bort understrykning */
+    font-size: 1rem;          /* Textstorlek */
+    font-weight: bold;        /* Fet stil */
+}
+
+/* Hover-effekt */
+.nav a:hover {
+    text-decoration: underline; /* Understruken vid mus över */
+}
+
+
+/* ===================================================== */
+/* ===================== DROPDOWN ====================== */
+/* ===================================================== */
+
+.dropdown {
+    position: relative; /* Viktigt för absolut positionering av menyn */
+}
+
+
+/* Själva knappen */
+.dropbtn {
+    background-color: #2e7d32; /* Samma gröna färg */
+    color: white;              /* Vit text */
+    border: none;              /* Ingen kant */
+    font-size: 1rem;           /* Textstorlek */
+    font-weight: bold;         /* Fet */
+    cursor: pointer;           /* Hand-symbol */
+}
+
+
+/* Dropdown-menyn (gömd från början) */
+.dropdown-content {
+    position: absolute;          /* Placeras under knappen */
+    top: 110%;                   /* Lite under knappen */
+    left: 0;
+    min-width: 160px;            /* Minsta bredd */
+
+    background-color: white;     /* Vit bakgrund */
+    border-radius: 8px;          /* Rundade hörn */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+
+    /* Animation */
+    opacity: 0;                  /* Osynlig */
+    visibility: hidden;          /* Klickbar ej */
+    transform: translateY(10px); /* Lite nedflyttad */
+    transition: all 0.3s ease;   /* Mjuk animation */
+}
+
+
+/* Länkar i dropdown */
+.dropdown-content a {
+    display: block;              /* Tar hela bredden */
+    padding: 12px;               /* Luft inuti */
+    margin: 8px;                 /* Mellanrum runt */
+    background-color: #2e7d32;   /* Grön rektangel */
+    color: white;                /* Vit text */
+    text-decoration: none;       /* Ingen understrykning */
+    border-radius: 6px;          /* Rundade hörn */
+    text-align: center;          /* Centrerad text */
+    transition: 0.2s;            /* Mjuk hover-effekt */
+}
+
+
+/* Hover-effekt på dag-länkar */
+.dropdown-content a:hover {
+    background-color: #1b5e20;   /* Mörkare grön */
+}
+
+
+/* Visa meny när man KLICKAR (focus) */
+.dropdown:focus-within .dropdown-content {
+    opacity: 1;                  /* Synlig */
+    visibility: visible;         /* Aktiverad */
+    transform: translateY(0);    /* Flyttas upp snyggt */
+}
+
+
+/* ===================================================== */
+/* ======================= RUBRIK ====================== */
+/* ===================================================== */
+
+h1 {
+    text-align: center;    /* Centrerad */
+    margin-bottom: 25px;   /* Avstånd nedåt */
+}
+
+
+/* ===================================================== */
+/* ======================== BILD ======================= */
+/* ===================================================== */
+
+.mainpic {
+    width: 100%;        /* Anpassas till container */
+    max-width: 500px;   /* Max storlek */
+    height: auto;       /* Behåller proportion */
+    display: block;     
+    margin: 0 auto 30px auto; /* Centrerad + luft nedåt */
+    border-radius: 10px; 
+}
+
+
+
+.khitmabild_text {
+    text-align: center;    /* Centrerad */
+    margin-bottom: 25px;   /* Avstånd nedåt */
+    margin-top: 90px;
+}
+
+
+.khitmabild_instälningar {
+    width: 100%;        /* Anpassas till container */
+    max-width: 500px;   /* Max storlek */
+    height: auto;       /* Behåller proportion */
+    display: block;     
+    margin: 0 auto 30px auto; /* Centrerad + luft nedåt */
+    border-radius: 10px; 
+}
+/* ===================================================== */
+/* ======================== TEXT ======================= */
+/* ===================================================== */
+
+p {
+    margin-bottom: 20px; /* Avstånd mellan stycken */
+    font-size: 1rem;     /* Normal textstorlek */
+    direction: rtl;      /* Arabisk riktning */
+    text-align: right;   /* Högerställd */
+}
+
+
+/* Fet första stycke */
+.stycke1 {
+    font-weight: bold;
+}
+
+
+/* ===================================================== */
+/* ================== NUMRERAD LISTA =================== */
+/* ===================================================== */
+
+ol {
+    direction: rtl;            /* Arabisk riktning */
+    text-align: right;         /* Högerställd */
+    list-style-position: inside; /* Siffran på samma rad */
+}
+
+
+/* ===================================================== */
+/* ================== MOBILANPASSNING ================== */
+/* ===================================================== */
+
+@media (max-width: 600px) {
+
+    .nav {
+        flex-direction: column; /* Staplar menyn */
+        gap: 10px;              /* Mellanrum */
+    }
+
+    .main {
+        width: 95%;             /* Nästan hela skärmen */
+        padding: 20px;          /* Mindre padding */
+        margin: 15px auto;      /* Mindre toppmarginal */
+    }
+
+    h1 {
+        font-size: 1.5rem;      /* Mindre rubrik */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= FORMULÄRET ================= */
+/* 
+Den här CSS-sektionen styr stilen för kontaktformuläret på din hemsida. 
+Den gör att formuläret ser snyggt ut med mjuk grön bakgrund, rundade hörn,
+avstånd mellan fälten och en snygg knapp med hover-effekt. 
+Även statusmeddelandet visas fint när formuläret skickas.
+*/
+
+.contact-section {
+    margin-top: 40px;                /* Avstånd uppifrån sidan, separerar formuläret från andra element */
+    padding: 25px;                   /* Inre luft runt formuläret, så text/fält inte sitter kant i kant */
+    background: #e8f5e9;             /* Ljusgrön bakgrundsfärg på hela formulärsboxen */
+    border-radius: 15px;             /* Rundar hörnen på formuläret */
+    max-width: 500px;                /* Maximal bredd på formuläret, för att inte bli för stort på stora skärmar */
+    margin-left: auto;                /* Centrerar formuläret horisontellt */
+    margin-right: auto;               /* Centrerar formuläret horisontellt */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Lägger en lätt skugga runt formuläret för 3D-effekt */
+}
+
+.contact-section h2 {
+    text-align: center;               /* Centrerar rubriken */
+    margin-bottom: 25px;              /* Avstånd under rubriken, så det inte sitter ihop med fälten */
+    color: #2e7d32;                   /* Mörkgrön färg på rubriken */
+    font-size: 1.6rem;                /* Storlek på rubriktexten */
+}
+
+.contact-section form {
+    display: flex;                    /* Gör formuläret till ett flexbox-element */
+    flex-direction: column;           /* Staplar alla fält vertikalt */
+    gap: 18px;                        /* Avstånd mellan varje fält */
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 12px;                    /* Inre luft i varje fält, gör det bekvämt att skriva i */
+    border: 1px solid #ccc;           /* Ljusgrå kantlinje runt fälten */
+    border-radius: 8px;               /* Rundar hörnen på fälten */
+    font-size: 1rem;                  /* Textstorlek inne i fälten */
+    transition: 0.3s;                 /* Gör så att färg och skugga ändras mjukt när man fokuserar */
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    outline: none;                    /* Tar bort standard blå kant runt fältet när man klickar */
+    border-color: #2e7d32;            /* Ändrar kantfärg till mörkgrön när man klickar i fältet */
+    box-shadow: 0 0 5px rgba(46,125,50,0.3); /* Lägger till mjuk skugga runt fältet när det är aktivt */
+}
+
+/* Footer (knapp + status) */
+.contact-section .form-footer {
+    display: flex;                    /* Gör att knappen och statusmeddelandet ligger på samma rad */
+    align-items: center;              /* Vertikal centrering av knapp och text */
+    gap: 15px;                        /* Avstånd mellan knapp och statusmeddelande */
+}
+
+/* Knapp */
+.contact-section button {
+    background-color: #2e7d32;        /* Grön bakgrund på knappen */
+    color: white;                      /* Vit text på knappen */
+    padding: 12px 20px;                /* Inre luft i knappen (höjd + bredd) */
+    border: none;                      /* Tar bort standardkantlinjen */
+    border-radius: 8px;                /* Rundar hörnen på knappen */
+    cursor: pointer;                   /* Visar pekhand när man hovrar över knappen */
+    font-size: 1rem;                   /* Textstorlek i knappen */
+    transition: 0.3s;                  /* Gör hover-effekten mjuk */
+}
+
+.contact-section button:hover {
+    background-color: #1b5e20;        /* Mörkare grön när man hovrar över knappen */
+}
+
+.contact-section button:disabled {
+    background-color: #a5d6a7;        /* Ljusgrön när knappen är inaktiv (disabled) */
+    cursor: not-allowed;               /* Visar att knappen inte går att klicka på */
+}
+
+/* Statusmeddelande */
+.form-status {
+    font-weight: bold;                 /* Fet text för meddelandet */
+    font-size: 1rem;                   /* Textstorlek */
+    color: green;                      /* Grön text som standard */
+    opacity: 0;                        /* Börjar osynlig */
+    transition: opacity 0.5s ease;     /* Mjuk övergång när meddelandet visas */
+}
+
+.form-status.show {
+    opacity: 1;                        /* När klassen 'show' läggs till blir meddelandet synligt */
+}

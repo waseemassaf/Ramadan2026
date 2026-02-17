@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan 2026 - Dag 1</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<main class="main">
+
+    <!-- ================= NAVIGATION ================= -->
+    <header>
+        <nav class="nav">
+
+            <div class="dropdown">
+                <button class="dropbtn" type="button">اختر اليوم ▼</button>
+
+                <div class="dropdown-content">
+                    <a href="dag1.html">يوم 1</a>
+                    <a href="dag2.html">يوم 2</a>
+                    <a href="dag3.html">يوم 3</a>
+                    <a href="dag4.html">يوم 4</a>
+                    <a href="dag5.html">يوم 5</a>
+                    <a href="dag6.html">يوم 6</a>
+                    <a href="dag7.html">يوم 7</a>
+                    <a href="dag8.html">يوم 8</a>
+                    <a href="dag9.html">يوم 9</a>
+                    <a href="dag10.html">يوم 10</a>
+                    <a href="dag11.html">يوم 11</a>
+                    <a href="dag12.html">يوم 12</a>
+                    <a href="dag13.html">يوم 13</a>
+                    <a href="dag14.html">يوم 14</a>
+                    <a href="dag15.html">يوم 15</a>
+                    <a href="dag16.html">يوم 16</a>
+                    <a href="dag17.html">يوم 17</a>
+                    <a href="dag18.html">يوم 18</a>
+                    <a href="dag19.html">يوم 19</a>
+                    <a href="dag20.html">يوم 20</a>
+                </div>
+            </div>
+
+            <a href="main.html">الصفحة الرئيسية</a>
+            <a href="main.html">تواصل معنا</a>
+
+        </nav>
+    </header>
+
+
+
+
+
+
+
+
+    <section class="contact-section" dir="rtl">
+        <h2>راسلنا 🤍</h2>
+
+        <form id="contact-form" action="https://formspree.io/f/xojnelgr" method="POST">
+
+            <label for="firstname">الاسم الأول</label>
+            <input type="text" id="firstname" name="firstname" placeholder="اكتب اسمك الأول" required>
+
+            <label for="lastname">اسم العائلة</label>
+            <input type="text" id="lastname" name="lastname" placeholder="اكتب اسم العائلة" required>
+
+            <label for="email">البريد الإلكتروني</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+            <label for="message">رسالتك</label>
+            <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+            <div class="form-footer">
+                <button type="submit" id="submit-btn">إرسال</button>
+                <span id="form-status" class="form-status"></span>
+            </div>
+
+        </form>
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function(event) {
+        event.preventDefault(); // Stoppar sidan från att ladda om
+
+        const data = new FormData(form);
+
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            status.textContent = "تم إرسال الرسالة بنجاح ✅";
+            form.reset(); // Tömmer fälten
+        } else {
+            status.textContent = "حدث خطأ، حاول مرة أخرى ❌";
+            status.style.color = "red";
+        }
+    });
+    </script>
+
+
+
+
+
+</main>
+
+</body>
+</html>
